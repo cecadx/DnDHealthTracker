@@ -53,6 +53,8 @@ function createAddWindow(){
     addWindow.on('close', function(){
         addWindow = null;
     });
+    //No Menu on the add window
+    addWindow.setMenu(null);
 }
 
 //Catch Added Item (item:add)
@@ -93,9 +95,10 @@ const mainMenuTemplate = [
     }
 ];
 
-if(process.platform == 'darwin'){
+//Breaks the menu --Look into further
+/*if(process.platform == 'darwin'){
     mainMenuTemplate.unshift({});
-};
+};*/
 
 //Add Developer tools item if not in procuction
 if(process.env.NODE_ENV !== 'production'){
