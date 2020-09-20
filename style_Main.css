@@ -52,7 +52,7 @@ ul{
 }
 
 .trash-btn, .complete-btn{
-    background: #ff6f47;
+    background: #f50000;
     color: white;
     border: none;
     padding: 1rem;
@@ -61,7 +61,7 @@ ul{
 }
 
 .complete-btn{
-    background: rgb(151, 223, 9);
+    background: #803adb;
 }
 
 .todo-item{
@@ -69,7 +69,7 @@ ul{
 }
 
 /*Click through icon onto button*/
-.fa-minus-circle, .fa-check{
+.fa-skull-crossbones, .fa-bed{
     pointer-events: none;
 }
 

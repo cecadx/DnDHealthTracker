@@ -20,22 +20,31 @@
         const ul = document.querySelector('ul');
         //Add Item
         ipcRenderer.on('item:add', function(e, item){
-            const todoDiv = document.createElement('div');
-            todoDiv.classList.add("todo");
+            //Set up the div
+            const enemyDiv = document.createElement('div');
+            enemyDiv.classList.add("todo");
+
+            //set up the list item
             const li = document.createElement('li');
             li.classList.add('todo-item');
             const itemText = document.createTextNode(item);
-            const completedButton = document.createElement('button');
-            completedButton.innerHTML = '<i class="fas fa-check"></i>';
-            completedButton.classList.add("complete-btn");
-            const trashButton = document.createElement('button');
-            trashButton.innerHTML = '<i class="fas fa-minus-circle"></i>';
-            trashButton.classList.add("trash-btn");
+
+            //set up ko button
+            const koButton = document.createElement('button');
+            koButton.innerHTML = '<i class="fas fa-bed"></i>';
+            koButton.classList.add("complete-btn");
+
+            //set up kill button
+            const killButton = document.createElement('button');
+            killButton.innerHTML = '<i class="fas fa-skull-crossbones"></i>';
+            killButton.classList.add("trash-btn");
+
+            //combine everything
             li.appendChild(itemText);
-            todoDiv.appendChild(li);
-            todoDiv.appendChild(completedButton);
-            todoDiv.appendChild(trashButton);
-            ul.appendChild(todoDiv);
+            enemyDiv.appendChild(li);
+            enemyDiv.appendChild(koButton);
+            enemyDiv.appendChild(killButton);
+            ul.appendChild(enemyDiv);
         });
             //Add todo to local storage
             //save todos to local storage

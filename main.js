@@ -35,9 +35,9 @@ app.on('ready', function(){
 //Handle create add window
 function createAddWindow(){
     addWindow = new BrowserWindow({
-        width: 500,
-        height: 200,
-        title: 'Add Shopping List Item',
+        width: 600,
+        height: 75,
+        title: 'Add Enemy',
         //Makes electron functions work on HTML pages
         webPreferences: {
             nodeIntegration: true
