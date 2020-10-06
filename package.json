@@ -12,6 +12,6 @@
   "author": "Carlos Conejo",
   "license": "MIT",
   "dependencies": {
-    "electron": "^9.1.2"
+    "electron": "^9.3.0"
   }
 }
