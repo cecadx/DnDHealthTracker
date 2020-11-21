@@ -36,7 +36,7 @@ app.on('ready', function(){
 function createAddWindow(){
     addWindow = new BrowserWindow({
         width: 600,
-        height: 75,
+        height: 225,
         title: 'Add Enemy',
         //Makes electron functions work on HTML pages
         webPreferences: {
