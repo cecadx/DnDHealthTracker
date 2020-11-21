@@ -35,9 +35,9 @@ app.on('ready', function(){
 //Handle create add window
 function createAddWindow(){
     addWindow = new BrowserWindow({
-        width: 500,
-        height: 200,
-        title: 'Add Shopping List Item',
+        width: 600,
+        height: 75,
+        title: 'Add Enemy',
         //Makes electron functions work on HTML pages
         webPreferences: {
             nodeIntegration: true
@@ -53,6 +53,8 @@ function createAddWindow(){
     addWindow.on('close', function(){
         addWindow = null;
     });
+    //No Menu on the add window
+    addWindow.setMenu(null);
 }
 
 //Catch Added Item (item:add)
@@ -93,9 +95,10 @@ const mainMenuTemplate = [
     }
 ];
 
-if(process.platform == 'darwin'){
+//Breaks the menu --Look into further
+/*if(process.platform == 'darwin'){
     mainMenuTemplate.unshift({});
-};
+};*/
 
 //Add Developer tools item if not in procuction
 if(process.env.NODE_ENV !== 'production'){
