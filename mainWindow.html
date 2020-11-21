@@ -10,8 +10,8 @@
            <a>Current Enemies</a> 
         </div>
     </nav>
-    <div class="todo-container">
-        <ul class="todo-list"></ul>
+    <div class="enemy-container">
+        <ul class="enemy-list"></ul>
     </div>
 
     <script>
@@ -22,22 +22,22 @@
         ipcRenderer.on('item:add', function(e, item){
             //Set up the div
             const enemyDiv = document.createElement('div');
-            enemyDiv.classList.add("todo");
+            enemyDiv.classList.add("enemy");
 
             //set up the list item
             const li = document.createElement('li');
-            li.classList.add('todo-item');
+            li.classList.add('enemy-item');
             const itemText = document.createTextNode(item);
 
             //set up ko button
             const koButton = document.createElement('button');
             koButton.innerHTML = '<i class="fas fa-bed"></i>';
-            koButton.classList.add("complete-btn");
+            koButton.classList.add("koButton-btn");
 
             //set up kill button
             const killButton = document.createElement('button');
             killButton.innerHTML = '<i class="fas fa-skull-crossbones"></i>';
-            killButton.classList.add("trash-btn");
+            killButton.classList.add("killButton-btn");
 
             //combine everything
             li.appendChild(itemText);
@@ -62,20 +62,20 @@
 
 
         //Button Functionality
-        const todoList = document.querySelector(".todo-list");
+        const todoList = document.querySelector(".enemy-list");
         todoList.addEventListener('click', deleteCheck)
         function deleteCheck(e){
             const item = e.target;
-            if(item.classList[0] === 'trash-btn'){
+            if(item.classList[0] === 'killButton-btn'){
                 const todo = item.parentElement;
                 todo.classList.add("fall");
                 todo.addEventListener('transitionend', function(){
                     todo.remove();
                 });
             };
-            if(item.classList[0] === "complete-btn"){
+            if(item.classList[0] === "koButton-btn"){
                 const todo = item.parentElement;
-                todo.classList.toggle('completed');
+                todo.classList.toggle('KO');
             };
         };
 
